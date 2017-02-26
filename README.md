@@ -3,7 +3,7 @@ Unleash your creativity with dynamic layouts!
 
 > This is an **experimental project.** It isn't battle-tested and has some known limitations (more below).
 
-Best suited for unconventional layouts, when you treat the DOM more like a canvas than a document. Yay for games, presentations and other full-screen experiences. Nay for articles, forums, e-commerce. YMMV.
+Best suited for unconventional layouts, when the DOM is treated more like a canvas than a document. Yay for games, presentations and other full-screen experiences. Nay for articles, forums, e-commerce. YMMV.
 
 ## What does this solve?
 
@@ -11,23 +11,23 @@ Relationships between DOM elements in a responsive layout can get annoyingly har
 
 A classic example is [scaling the font size to parent width.](http://stackoverflow.com/questions/16056591/font-scaling-based-on-width-of-container#comment29460412_19814948) This **can** be done traditionally using viewport-percentage lengths. But what if:
 
-1. You want to scale `border-width` instead, ensure the value is a multiplier or 2 and constrain it between min/max values?
+1. We want to scale `border-width` instead, ensure the value is a multiplier or 2 and constrain it between min/max values?
 2. The parent is a cell in a grid with a dynamic number of columns? Depending on run time data, the parent might be `50vw` (two columns) or `25vw` (four columns). Or maybe those columns are actually resizable panes.
 
-Whether you need to **scale values using custom functions** (1) or **adapt layout to user data** (2), sooner or later media queries and classes will not be enough.
+Whether we need to **scale values using custom functions** (1) or **adapt layout to user data** (2), sooner or later media queries and classes will not be enough.
 
-I say "high level CSS" because you can always go rogue and compute each value by hand. This is precisely what react-redux-layout is about!
+I say "high level CSS" because we can always go rogue and compute each value by hand. We can **derive our layout from the viewport size**, trickling CSS attributes down the component hierarchy. This is precisely what react-redux-layout is about!
 
 ## How does this work?
 
 First and foremost, this is **not another CSS-in-JS alternative!** It is complementary to [existing tools](https://github.com/MicheleBertoli/css-in-js#features). It might be helpful to separate styles as:
 
-1. **Static styles.** Nothing changes here. You can set these via CSS/LESS/SASS imports, styled-jsx, styled-components, etc.
-2. **Dynamic styles.** While the values will be computed via react-redux-layout, how you apply them is up to you. Plain object literals should be enough, but you can also use jsxstyle or any other lib that supports object literals (e.g. glamor).
+1. **Static styles.** Nothing changes here. Continue to set these via plain imports, css-modules, glamor, styled-jsx, styled-components, etc.
+2. **Dynamic styles.** While the values are computed via react-redux-layout, how to assign them to elements is errbody's bidness. `style` object literals might suffice, but we can also pass the style values to something like jsxstyle or as styled-components props.
 
 Now that we got that out of the way, let's get to the fun part: **Piggybacking Redux!**
 
-> Warning: React and Redux knowledge required.
+> Warning: React and Redux knowledge required 🤓
 
 ### 1. Register layout reducer and init layout listener
 
@@ -93,7 +93,7 @@ export default connect(({ layout }) => ({
 
 ## Performance
 
-Dynamic styles are slower and more verbose than classes. It's up to you to decide if the benefits outweigh the cost. Remember, most CSS attributes are static and should continue to be applied using classes.
+Dynamic styles are slower and more verbose than classes. It's up to each of us to decide if the benefits outweigh the cost. Remember, most CSS attributes are static and should continue to be applied using classes.
 
 ## SSR
 
