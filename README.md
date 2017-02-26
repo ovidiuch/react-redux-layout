@@ -5,7 +5,7 @@ Unleash your creativity with dynamic layouts!
 
 Best suited for unconventional layouts, when the DOM is treated more like a canvas than a document. Yay for games, presentations and other full-screen experiences. Nay for articles, forums, e-commerce. YMMV.
 
-![Flatris sizes](flatris-resize.gif)
+> [Illustrated Algorithms](https://illustrated-algorithms.now.sh/) and [Flatris](https://skidding.github.io/flatris/) are using this. Resize and play with aspect ratios to get the feel of it.
 
 ## What does this solve?
 
