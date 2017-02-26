@@ -5,6 +5,8 @@ Unleash your creativity with dynamic layouts!
 
 Best suited for unconventional layouts, when the DOM is treated more like a canvas than a document. Yay for games, presentations and other full-screen experiences. Nay for articles, forums, e-commerce. YMMV.
 
+![Flatris sizes](flatris-resize.gif)
+
 ## What does this solve?
 
 Relationships between DOM elements in a responsive layout can get annoyingly hard to define via high level CSS.
