@@ -20,6 +20,8 @@ Whether we need to **scale values using custom functions** (1) or **adapt layout
 
 I say "high level CSS" because we can always go rogue and compute each value by hand. We can **derive our layout from the viewport size**, trickling CSS attributes down the component hierarchy. This is precisely what react-redux-layout is about!
 
+*PS. You might've encountered a bad React pattern when a component absolutely needs to know the size of the parent container: **Wasting a render loop.** Once the DOM is created, the component puts the parent width/height into its local state for child components to use in the next render loop. react-redux-layout fixes this.*
+
 ## How does this work?
 
 First and foremost, this is **not another CSS-in-JS alternative!** It is complementary to [existing tools](https://github.com/MicheleBertoli/css-in-js#features). It might be helpful to separate styles as:
