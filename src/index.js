@@ -12,7 +12,7 @@ let _computeLayout;
 
 // Didn't named the export as just "reducer" because the user will probably
 // already have a "reducer" import or variable name in the consuming namespace
-export const layoutReducer = (state, action) => {
+export const layoutReducer = (state = {}, action) => {
   // Ignore Redux init. Layout needs state instance to init, so it's impossible
   // to register the computeLayout fn before the Redux store init.
   if (typeof _computeLayout !== 'function') {
